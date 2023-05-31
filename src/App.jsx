@@ -1,18 +1,15 @@
-import './App.css'
+import "./App.css";
+import Nav from "./components/Nav";
+import MainHeader from "./components/MainHeader";
+import ReviewsList from "./components/ReviewsList";
+import { Route, Routes } from "react-router-dom";
 
-function App() {
-
+export default function App() {
   return (
-    <>
-      <nav>
-        <p>This is the navigation </p>
-      </nav>
-      <h1>Main Header</h1>
-      <section>
-        <p>This is the first section</p>
-      </section>
-    </>
-  )
+    <section>
+        <Nav />
+        <MainHeader />
+        <ReviewsList />
+    </section>
+  );
 }
-
-export default App

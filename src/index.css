@@ -1,6 +1,103 @@
 /* Global css file */
 
-:root {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*-----------Nav Bar-----------*/
+
+body {
+  margin: 0;
+  min-height: 300px;
+}
+
+nav {
+  width: 100%;
+  float: left;
+}
+
+.menu {
+  margin: 0;
+  padding: 8px;
+  height: 100%;
+  background-color: #17338f;
+}
+
+.menu li {
+  display: inline;
+}
+
+.button {
+  font-family: Arial;
+  font-size: 1em;
+  font-style: none;
+  color: #ffffff;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.button:link {
+  background-color: #17338f;
+  color: #ffffff;
+}
+
+.button:hover {
+  background-color: #4681e8;
+}
+
+/*-----------Main Header-----------*/
+
+.header {
+  padding: 85px 60px 60px 60px;
+  text-align: center;
+  background: rgb(249, 249, 55);
+  color: #17338f;
+  font-family: Arial;
+  font-size: 30px;
+}
+
+/*-----------Review Page-----------*/
+
+.review-page {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px;
+  padding: 20px;
+  color: #11276e;
+}
+
+.review-card-container {
+  color: #11276e;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  align-content: stretch;
+  row-gap: 40px;
+}
+
+.review-img {
+  border-radius: 8px;
+  max-width: 500px;
+  max-height: 300px;
+}
+
+.loading {
+  text-align: center;
+  color: #11276e;
+  font-family: Arial;
+  font-size: 2em;
+  padding: 1em;
+}
+
+/*-----------XXX-----------*/
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -29,7 +126,7 @@ h1 {
   line-height: 1.1;
 }
 
-/* button {
+button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -46,7 +143,7 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-} */
+}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -59,4 +156,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
