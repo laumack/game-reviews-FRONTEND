@@ -6,7 +6,12 @@ const gamesApi = axios.create({
 
 export function getAllReviews() {
   return gamesApi.get("/reviews").then((res) => {
-    console.log(res);
     return res.data;
   });
 }
+
+export function getReviewById(reviewId) {
+  return gamesApi.get(`/reviews/?review_id=${reviewId}`).then((res) => {
+    return res.data;
+  });
+} //this will be called on the new page

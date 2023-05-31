@@ -3,17 +3,17 @@ export default function Nav() {
     <nav>
       <ul className="menu">
         <li>
-          <a class="button" href="index.html">
+          <a className="button" href="/">
             Home
           </a>
         </li>
         <li>
-          <a class="button" href="index.html">
+          <a className="button" href="/">
             About
           </a>
         </li>
         <li>
-          <a class="button" href="index.html">
+          <a className="button" href="/">
             Contact Us
           </a>
         </li>

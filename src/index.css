@@ -95,6 +95,18 @@ h2 {
   padding: 1em;
 }
 
+/*-----------Footer-----------*/
+
+footer {
+  text-align: center;
+  padding: 8px;
+  background-color: #4681e8;
+  font-family: Arial;
+  font-size: 1em;
+  color: #ffffff;
+  margin-top: 30px;
+}
+
 /*-----------XXX-----------*/
 
 /* :root {
