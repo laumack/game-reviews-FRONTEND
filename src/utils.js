@@ -11,7 +11,7 @@ export function getAllReviews() {
 }
 
 export function getReviewById(reviewId) {
-  return gamesApi.get(`/reviews/?review_id=${reviewId}`).then((res) => {
+  return gamesApi.get(`/reviews/${reviewId}`).then((res) => {
     return res.data;
   });
-} //this will be called on the new page
+}

@@ -25,7 +25,7 @@ export default function ReviewsList() {
   return (
     <section className="review-page">
       <h2>All Reviews</h2>
-      <section className="review-card-container">
+      <section className="all-reviews-container">
         {reviews.map(
           ({ review_id, title, category, review_img_url, created_at }) => {
             return (
