@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*---------Skip to Main---------*/
+
+.skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+/*------------Nav Bar------------*/
+
+body {
+  margin: 0;
+  min-height: 300px;
+}
+
+nav {
+  width: 100%;
+  float: left;
+}
+
+.menu {
+  margin: 0;
+  padding: 8px;
+  height: 100%;
+  background-color: #17338f;
+}
+
+.menu li {
+  display: inline;
+}
+
+.button {
+  font-family: Arial;
+  font-size: 1em;
+  font-style: none;
+  color: #ffffff;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.button:link {
+  background-color: #17338f;
+  color: #ffffff;
+}
+
+.button:hover {
+  background-color: #4681e8;
+}
+
+/*----------Main Header----------*/
+
+.header {
+  padding: 80px 60px 50px 60px;
+  text-align: center;
+  background: rgb(249, 249, 55);
+  color: #17338f;
+  font-family: Arial;
+  font-size: 30px;
+}
+
+#subheading {
+  padding-top: 0.5em;
+}
+
+/*------------Footer------------*/
+
+footer {
+  text-align: center;
+  padding: 8px;
+  background-color: #4681e8;
+  font-family: Arial;
+  font-size: 1em;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+/*------------------------------*/

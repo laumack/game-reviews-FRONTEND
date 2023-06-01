@@ -1,4 +1,4 @@
-import { getReviewById } from "../utils.js";
+import "../styling/ReviewCard.css"
 import { Link } from "react-router-dom";
 
 export default function ReviewCard({
@@ -13,7 +13,9 @@ export default function ReviewCard({
     <article>
       <h3>{title}</h3>
       <p>Category: {category}</p>
-      <img src={reviewImgUrl} alt={title} className="all-reviews-img"></img>
+      <Link to={`/reviews/${reviewId}`} className="reviewLink">
+        <img src={reviewImgUrl} alt={title} title={title}  className="all-reviews-img"></img>
+      </Link>
       <p>Date: {createdAt}</p>
       <Link to={`/reviews/${reviewId}`}className="reviewLink"
       >Read this review</Link>

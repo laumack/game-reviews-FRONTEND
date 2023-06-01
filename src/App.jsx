@@ -1,20 +1,22 @@
-import "./App.css";
 import Nav from "./components/Nav";
-import MainHeader from "./components/MainHeader";
+import Header from "./components/Header";
 import ReviewsList from "./components/ReviewsList";
-import ReviewIdCard from "./components/ReviewIdCard";
+import ReviewById from "./components/ReviewById";
 import { Route, Routes } from "react-router-dom";
+import Comments from "./components/Comments";
 
 export default function App() {
   return (
-    <section>
+    <>
+      <a href="#main" className="skip">Skip to main content</a>
       <Nav />
-      <MainHeader />
+      <Header />
       <Routes>
         <Route path="/" element={<ReviewsList />}></Route>
-        <Route path="/reviews/:reviewId" element={<ReviewIdCard />}></Route>
+        <Route path="/reviews/:reviewId" element={<ReviewById />}></Route>
+        <Route path="/reviews/:reviewId" element={<Comments />}></Route>
       </Routes>
       <footer>Footer - under construction</footer>
-    </section>
+    </>
   );
 }
