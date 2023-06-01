@@ -4,8 +4,9 @@ export default function MainHeader() {
       <h1>
         Welcome to
         <br />
-        Games Reviews
+        Board-Master
       </h1>
+      <p><u>The</u> place to come for board game reviews</p>
     </header>
   );
 }

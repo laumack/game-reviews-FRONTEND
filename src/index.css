@@ -58,7 +58,7 @@ nav {
   font-size: 30px;
 }
 
-/*-----------Review Page-----------*/
+/*-----------Home Page-----------*/
 
 .review-page {
   font-family: Arial, Helvetica, sans-serif;
@@ -71,7 +71,7 @@ h2 {
   color: #11276e;
 }
 
-.review-card-container {
+.all-reviews-container {
   color: #11276e;
   display: flex;
   flex-wrap: wrap;
@@ -81,7 +81,7 @@ h2 {
   row-gap: 40px;
 }
 
-.review-img {
+.all-reviews-img {
   border-radius: 8px;
   max-width: 500px;
   max-height: 300px;
@@ -93,6 +93,64 @@ h2 {
   font-family: Arial;
   font-size: 2em;
   padding: 1em;
+}
+
+/*-----------Ind Review Pg-----------*/
+
+.review-container {
+  color: #11276e;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: 20% auto auto auto;
+  grid-template-rows: repeat (3, 33%);
+  gap: 2em;
+  border: black;
+  padding: 1em 3em 0em 3em;
+}
+#item-a {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  text-align: center;
+}
+#item-b {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  text-align: center;
+  text-transform: capitalize;
+}
+#item-c {
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
+  text-align: justify;
+  align-self: center;
+}
+#item-d {
+  grid-column: 4 / 5;
+  grid-row: 1 / 4;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  align-self: center;
+}
+#item-e {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+#item-f {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+
+/*-----------Footer-----------*/
+
+footer {
+  text-align: center;
+  padding: 8px;
+  background-color: #4681e8;
+  font-family: Arial;
+  font-size: 1em;
+  color: #ffffff;
+  margin-top: 30px;
 }
 
 /*-----------XXX-----------*/

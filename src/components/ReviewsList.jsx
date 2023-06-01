@@ -10,7 +10,6 @@ export default function ReviewsList() {
     getAllReviews().then(({ reviews }) => {
       setReviews(reviews);
       setIsLoading(false);
-      console.log("in the useEffect");
     });
   }, []);
 
@@ -25,19 +24,28 @@ export default function ReviewsList() {
 
   return (
     <section className="review-page">
-      <h2>Reviews</h2>
-      <section className="review-card-container">
-        {reviews.map(({ review_id, title, category, review_img_url }) => {
-          return (
-            <ReviewCard
-              className="review-card"
-              key={review_id}
-              title={title}
-              category={category}
-              reviewImgUrl={review_img_url}
-            />
-          );
-        })}
+      <h2>All Reviews</h2>
+      <section className="all-reviews-container">
+        {reviews.map(
+          ({ review_id, title, category, review_img_url, created_at }) => {
+            return (
+              <ReviewCard
+                className="review-card"
+                key={review_id}
+                title={title}
+                category={category}
+                reviewImgUrl={review_img_url}
+                createdAt={new Date(created_at)
+                  .toISOString()
+                  .replace(/T.*/, "")
+                  .split("-")
+                  .reverse()
+                  .join("-")}
+                reviewId={review_id}
+              />
+            );
+          }
+        )}
       </section>
     </section>
   );
