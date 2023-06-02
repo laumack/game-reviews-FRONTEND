@@ -90,3 +90,17 @@ footer {
 }
 
 /*------------------------------*/
+
+@media only screen and (max-width: 600px) {
+  .header {
+    padding: 80px 60px 50px 60px;
+    text-align: center;
+    background: rgb(249, 249, 55);
+    color: #17338f;
+    font-family: Arial;
+    font-size: 20px;
+  }
+  #subheading {
+    padding-top: 0.5em;
+  }
+}

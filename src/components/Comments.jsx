@@ -1,14 +1,16 @@
 import "../styling/Comments.css";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getComments } from "../utils.js";
 
 export default function Comments() {
-  const [commentsById, setComments] = useState([]);
+  const { reviewId } = useParams();
+  const [commentsById, setCommentsById] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getComments(2).then(({ comments }) => {
-      setComments(comments);
+    getComments(reviewId).then(({ comments }) => {
+      setCommentsById(comments);
       setIsLoading(false);
     });
   }, []);
@@ -22,19 +24,32 @@ export default function Comments() {
       </section>
     );
 
+  if (commentsById.length === 0) {
+    return (
+      <>
+        <section className="comments-header">
+          <h2 id="title-comment">Comments</h2>
+          <h3 id="title-user">Username</h3>
+          <h3 id="title-votes">Votes</h3>
+        </section>
+        <p id="no-comments">No comments yet...</p>
+      </>
+    );
+  }
+
   return (
     <>
       <section className="comments-header">
-        <h2 id="item-1">Comments</h2>
-        <h3 id="item-2">Username</h3>
-        <h3 id="item-3">Votes</h3>
+        <h2 id="title-comment">Comments</h2>
+        <h3 id="title-user">Username</h3>
+        <h3 id="title-votes">Votes</h3>
       </section>
       {commentsById.map(({ comment_id, body, author, votes, created_at }) => {
         return (
           <article key={comment_id} className="comments-content">
-            <p id="item-4">{body}</p>
-            <h3 id="item-5">{author}</h3>
-            <p id="item-6">
+            <p id="item-comment">{body}</p>
+            <h3 id="item-user">{author}</h3>
+            <p id="item-date">
               {new Date(created_at)
                 .toISOString()
                 .replace(/T.*/, "")
@@ -42,7 +57,7 @@ export default function Comments() {
                 .reverse()
                 .join("-")}
             </p>
-            <h3 id="item-7">{votes}</h3>
+            <h3 id="item-votes">{votes}</h3>
           </article>
         );
       })}

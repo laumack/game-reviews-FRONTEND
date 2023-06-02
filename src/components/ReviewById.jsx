@@ -1,3 +1,4 @@
+import "../styling/ReviewById.css";
 import { useEffect, useState } from "react";
 import { getReviewById } from "../utils.js";
 import { useParams } from "react-router-dom";
@@ -42,19 +43,17 @@ export default function ReviewById() {
         </p>
         <h4 id="item-auth">Written by: {idReview.owner}</h4>
         <p id="item-date">
-                  Date of review:{" "}
-                  {new Date(idReview.created_at)
-                    .toISOString()
-                    .replace(/T.*/, "")
-                    .split("-")
-                    .reverse()
-                    .join("-")}
-                </p>
+          Date of review:{" "}
+          {new Date(idReview.created_at)
+            .toISOString()
+            .replace(/T.*/, "")
+            .split("-")
+            .reverse()
+            .join("-")}
+        </p>
         <p id="item-vote">
           Votes: <b>{idReview.votes}</b>
         </p>
-        
-        
       </article>
       <Comments />
     </main>
