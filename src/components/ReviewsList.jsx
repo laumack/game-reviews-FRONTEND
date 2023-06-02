@@ -1,3 +1,4 @@
+import "../styling/ReviewsList.css"
 import { useState, useEffect } from "react";
 import ReviewCard from "./ReviewCard";
 import { getAllReviews } from "../utils.js";
@@ -23,7 +24,7 @@ export default function ReviewsList() {
     );
 
   return (
-    <section className="review-page">
+    <main id="main" className="review-page">
       <h2>All Reviews</h2>
       <section className="all-reviews-container">
         {reviews.map(
@@ -47,6 +48,6 @@ export default function ReviewsList() {
           }
         )}
       </section>
-    </section>
+    </main>
   );
 }

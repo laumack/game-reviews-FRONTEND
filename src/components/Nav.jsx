@@ -1,3 +1,5 @@
+import "../styling/App.css"
+
 export default function Nav() {
   return (
     <nav>
