@@ -21,3 +21,11 @@ export function getComments(reviewId) {
     return res.data;
   });
 }
+
+export function patchReview(reviewId) {
+  return gamesApi
+    .patch(`/reviews/${reviewId}`, { inc_votes: 1 })
+    .then((res) => {
+      return res.data;
+    });
+}

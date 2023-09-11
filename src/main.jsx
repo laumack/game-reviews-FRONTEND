@@ -10,3 +10,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </React.StrictMode>
   </BrowserRouter>
 );
+
+// use "npm run dev" to load preview webpage on localhost

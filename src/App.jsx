@@ -8,7 +8,9 @@ import Comments from "./components/Comments";
 export default function App() {
   return (
     <>
-      <a href="#main" className="skip">Skip to main content</a>
+      <a href="#main" className="skip">
+        Skip to main content
+      </a>
       <Nav />
       <Header />
       <Routes>
@@ -16,7 +18,12 @@ export default function App() {
         <Route path="/reviews/:reviewId" element={<ReviewById />}></Route>
         <Route path="/reviews/:reviewId" element={<Comments />}></Route>
       </Routes>
-      <footer>Footer - under construction</footer>
+      <footer>
+        <blockquote>
+          <b>life is a game, all you have to do is know how to play it</b> ~
+          unknown
+        </blockquote>
+      </footer>
     </>
   );
 }
