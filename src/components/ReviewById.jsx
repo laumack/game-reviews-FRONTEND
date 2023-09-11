@@ -1,6 +1,7 @@
 import "../styling/ReviewById.css";
 import { useEffect, useState } from "react";
 import { getReviewById } from "../utils.js";
+import { patchReview } from "../utils.js";
 import { useParams } from "react-router-dom";
 import Comments from "./Comments.jsx";
 
@@ -8,6 +9,7 @@ export default function ReviewById() {
   const { reviewId } = useParams();
   const [idReview, setIdReview] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [err, setErr] = useState(null);
 
   useEffect(() => {
     getReviewById(reviewId).then(({ review }) => {
@@ -15,6 +17,24 @@ export default function ReviewById() {
       setIsLoading(false);
     });
   }, []);
+
+  const increaseVote = (increment) => {
+    setIdReview((currIdReview) => {
+      let copyCurrIdReview = { ...currIdReview };
+      copyCurrIdReview.votes = copyCurrIdReview.votes + 1;
+      setErr(null);
+      return copyCurrIdReview;
+    });
+
+    patchReview(reviewId).catch((err) => {
+      setIdReview((currIdReview) => {
+        let copyCurrIdReview = { ...currIdReview };
+        copyCurrIdReview.votes = copyCurrIdReview.votes - 1;
+        setErr("Something went wrong, please try your vote again");
+        return copyCurrIdReview;
+      });
+    });
+  };
 
   if (isLoading)
     return (
@@ -55,6 +75,17 @@ export default function ReviewById() {
           Votes: <b>{idReview.votes}</b>
         </p>
       </article>
+      <section className="vote-buttons">
+        {err ? <p id="error-message">{err}</p> : null}
+        <button
+          id="up-vote"
+          type="button"
+          title="increase vote"
+          onClick={() => increaseVote(1)}
+        >
+          👍 Like this review
+        </button>
+      </section>
       <Comments />
     </main>
   );

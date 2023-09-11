@@ -22,6 +22,8 @@ export default function ReviewsList() {
         please wait
       </section>
     );
+  
+  // <iframe src="https://giphy.com/embed/1vY8RboCYg4wM" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/thread-running-alizarin-1vY8RboCYg4wM">via GIPHY</a></p>
 
   return (
     <main id="main" className="review-page">

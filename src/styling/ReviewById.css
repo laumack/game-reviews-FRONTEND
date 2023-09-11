@@ -1,3 +1,27 @@
+#error-message {
+  text-align: center;
+  color: #11276e;
+  font-family: Arial;
+  font-size: 1em;
+  padding: 0.5em 2em 2em 2em;
+}
+.vote-buttons {
+  padding: 0 2em 1.5em 2em;
+}
+
+#up-vote {
+  font-size: medium;
+  font-weight: bold;
+  background-color: white;
+  color: #11276e;
+  border: 2px solid #11276e;
+  padding: 1em;
+  border-radius: 8px;
+}
+#up-vote:hover {
+  background-color: #4681e8;
+}
+
 @media screen and (min-width: 600px) {
   .review-container {
     width: 100vw;
@@ -34,6 +58,7 @@
     object-fit: cover;
     border-radius: 8px;
     align-self: center;
+    text-align: center;
     padding-top: 0.5em;
   }
   #item-des {
@@ -100,6 +125,7 @@
     object-fit: contain;
     border-radius: 8px;
     align-self: center;
+    text-align: center;
     padding-top: 0.5em;
   }
   #item-auth {
