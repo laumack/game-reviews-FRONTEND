@@ -1,15 +1,19 @@
-#error-message {
+#status-message {
+  font-size: medium;
+  font-weight: bold;
   text-align: center;
-  color: #11276e;
+  color: #6e1111;
   font-family: Arial;
   font-size: 1em;
-  padding: 0.5em 2em 2em 2em;
-}
-.vote-buttons {
-  padding: 0 2em 1.5em 2em;
+  padding: 1.5em 2em 0em 2em;
 }
 
-#up-vote {
+.vote-buttons-container {
+  padding: 0 2em 1.5em 2em;
+  text-align: center;
+}
+
+#vote-buttons {
   font-size: medium;
   font-weight: bold;
   background-color: white;
@@ -17,8 +21,9 @@
   border: 2px solid #11276e;
   padding: 1em;
   border-radius: 8px;
+  margin: 0 1em 0 1em;
 }
-#up-vote:hover {
+#vote-buttons:hover {
   background-color: #4681e8;
 }
 

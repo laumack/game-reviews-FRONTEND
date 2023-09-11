@@ -22,9 +22,9 @@ export function getComments(reviewId) {
   });
 }
 
-export function patchReview(reviewId) {
+export function patchReview(reviewId, increment) {
   return gamesApi
-    .patch(`/reviews/${reviewId}`, { inc_votes: 1 })
+    .patch(`/reviews/${reviewId}`, { inc_votes: increment })
     .then((res) => {
       return res.data;
     });

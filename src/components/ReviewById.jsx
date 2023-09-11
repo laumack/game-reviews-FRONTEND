@@ -10,6 +10,8 @@ export default function ReviewById() {
   const [idReview, setIdReview] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
+
 
   useEffect(() => {
     getReviewById(reviewId).then(({ review }) => {
@@ -17,24 +19,6 @@ export default function ReviewById() {
       setIsLoading(false);
     });
   }, []);
-
-  const increaseVote = (increment) => {
-    setIdReview((currIdReview) => {
-      let copyCurrIdReview = { ...currIdReview };
-      copyCurrIdReview.votes = copyCurrIdReview.votes + 1;
-      setErr(null);
-      return copyCurrIdReview;
-    });
-
-    patchReview(reviewId).catch((err) => {
-      setIdReview((currIdReview) => {
-        let copyCurrIdReview = { ...currIdReview };
-        copyCurrIdReview.votes = copyCurrIdReview.votes - 1;
-        setErr("Something went wrong, please try your vote again");
-        return copyCurrIdReview;
-      });
-    });
-  };
 
   if (isLoading)
     return (
@@ -44,6 +28,33 @@ export default function ReviewById() {
         please wait
       </section>
     );
+
+
+  const amendVote = (increment) => {
+    setIdReview((currIdReview) => {
+      let copyCurrIdReview = { ...currIdReview };
+      copyCurrIdReview.votes = copyCurrIdReview.votes + increment;
+      setErr(null);
+      setSuccessMessage("Your vote has been counted!");
+      setTimeout(clearSuccessMessage, 3000);
+      return copyCurrIdReview;
+    });
+
+    patchReview(reviewId, increment).catch((err) => {
+      setIdReview((currIdReview) => {
+        let copyCurrIdReview = { ...currIdReview };
+        copyCurrIdReview.votes = copyCurrIdReview.votes - increment;
+        setErr("Something went wrong, please try your vote again...");
+        setSuccessMessage(null);
+        return copyCurrIdReview;
+      });
+    });
+  };
+
+  const clearSuccessMessage = () => {
+    setSuccessMessage(null);
+  };
+
 
   return (
     <main id="main">
@@ -75,16 +86,25 @@ export default function ReviewById() {
           Votes: <b>{idReview.votes}</b>
         </p>
       </article>
-      <section className="vote-buttons">
-        {err ? <p id="error-message">{err}</p> : null}
+      <section className="vote-buttons-container">
         <button
-          id="up-vote"
+          id="vote-buttons"
           type="button"
           title="increase vote"
-          onClick={() => increaseVote(1)}
+          onClick={() => amendVote(1)}
         >
           👍 Like this review
         </button>
+        <button
+          id="vote-buttons"
+          type="button"
+          title="decrease vote"
+          onClick={() => amendVote(-1)}
+        >
+          👎 Dislike this review
+        </button>
+        {err ? <p id="status-message">{err}</p> : null}
+        {successMessage && <p id="status-message">{successMessage}</p>}
       </section>
       <Comments />
     </main>
